@@ -1,0 +1,56 @@
+<div class="container_12">
+  <div class="grid_9">
+    <h3>Sarees</h3>
+
+    <div class="tours gallery">
+      <div class="grid_4" *ngFor="let product of products | paginate: { itemsPerPage: 10, currentPage: p };let isEven = even;" [ngClass]="{'omega':isEven==true,'alpha':isEven==false}">
+        <div class="tour">
+          <a routerLink="{{product.url}}" title="{{product.productTitle}}">
+            <img [src]="'//' +product.imagePath" alt="{{product.productTitle}}" title="{{product.productTitle}}" height="240" width="200" class="img_inner fleft">
+          </a>
+          <div class="extra_wrapper">
+            <p class="text1">{{product.productTitle | slice:0:18}}....</p>
+            <p class="price">{{product.purpose}}</p>
+            <p class="price">Best Price <span>{{product.price | currency:'INR':true}}</span></p>
+            <a routerLink="{{product.url}}" class="btn">Details</a>
+          </div>
+        </div>
+        <div class="clear" *ngIf="isEven==false"></div>
+      </div>
+    </div>
+    <div class="pages" style="clear: both;">
+      <pagination-controls (pageChange)="p = $event" #api></pagination-controls>
+    </div>
+  </div>
+
+  <div class="grid_3">
+    <h3>Search Sarees</h3>
+    <form method="post" id="form2" class="form1">
+      <label >
+            <span><span class="col1">All Search Operators</span><br>
+            Material</span>
+        <select name="material" id="material" onchange="refreshPage(this.value,this.id)">
+          <option value="" selected="selected" >All</option>
+        </select>
+      </label>
+      <label >
+        <span>Color</span>
+        <select name="color" id="color" onchange="refreshPage(this.value,this.id)">
+          <option value="" selected="selected" >All</option>
+        </select>
+      </label>
+      <label>
+        <span>Price</span>
+        <select id="price" name="price" onchange="refreshPage(this.value,this.id)">
+          <option value="0-1000">less than 1000</option>
+          <option value="1000-1500">1000-1500</option>
+          <option value="1500-2000">1500-2000</option>
+          <option value="2000-3000">2000-3000</option>
+          <option value="3000">Above 3000</option>
+        </select>
+      </label>
+      <div class="clear"></div>
+    </form>
+  </div>
+  <div class="clear"></div>
+</div>
