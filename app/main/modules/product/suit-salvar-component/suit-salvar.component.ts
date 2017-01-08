@@ -1,4 +1,5 @@
 import {Component, OnInit} from "@angular/core";
+
 import {ProductResponse} from "../../../response/product.response";
 import {ProductService} from "../../../service/product.service";
 import {ProductMaterialResponse} from "../../../response/product-material.response";
@@ -8,11 +9,11 @@ import {SearchBasedProductResponse} from "../../../response/search-based-product
 
 @Component({
   moduleId : module.id,
-  selector : 'sarees-component',
-  templateUrl: 'sarees.component.html'
+  selector : 'suit-salvar-component',
+  templateUrl: 'suit-salvar.component.html'
 })
 
-export class SareesComponent implements OnInit{
+export class SuitSalvarComponent implements OnInit{
   public products : ProductResponse = [];
   public productMaterial : ProductMaterialResponse = [];
   public productColor : ProductColorResponse = [];
@@ -24,21 +25,18 @@ export class SareesComponent implements OnInit{
   public selectedPrice ="";
 
   constructor(private _productService : ProductService){}
-/*  constructor (private _pRequest : ProductRequest){
-    _pRequest.category = "sarees";
-  }*/
 
   ngOnInit(): void {
-    this._productService.getProducts(ProductCategory.saree).then(pResponse =>{this.products=pResponse;});
+    this._productService.getProducts(ProductCategory.suit).then(pResponse =>{this.products=pResponse;});
 
     this._productService
-      .getProductMaterial(ProductType.saree)
+      .getProductMaterial(ProductType.suit)
       .subscribe((mResponse:ProductMaterialResponse[]) => this.productMaterial=mResponse,
         error => console.log(error),
         () => console.log('Get all material complete'));
 
     this._productService
-      .getProductColor(ProductType.saree)
+      .getProductColor(ProductType.suit)
       .subscribe((cResponse:ProductColorResponse[]) => this.productColor=cResponse,
         error => console.log(error),
         () => console.log('Get all color complete'));
@@ -49,7 +47,7 @@ export class SareesComponent implements OnInit{
     this.selectedColor = "";
     this.selectedPrice = "";
     this._productService
-      .getSearchBasedProducts(ProductCategory.saree,materialType)
+      .getSearchBasedProducts(ProductCategory.suit,materialType)
       .subscribe((cResponse:SearchBasedProductResponse) => {
           this.products=cResponse.products;
           this.searchTerm = cResponse.searchTitle;
@@ -61,7 +59,7 @@ export class SareesComponent implements OnInit{
     this.selectedMaterial = "";
     this.selectedPrice = "";
     this._productService
-      .getSearchBasedProducts(ProductCategory.saree,null,colorType)
+      .getSearchBasedProducts(ProductCategory.suit,null,colorType)
       .subscribe((cResponse:SearchBasedProductResponse) => {
           this.products=cResponse.products;
           this.searchTerm = cResponse.searchTitle;
@@ -73,7 +71,7 @@ export class SareesComponent implements OnInit{
     this.selectedMaterial = "";
     this.selectedColor = "";
     this._productService
-      .getSearchBasedProducts(ProductCategory.saree,null,null,priceTag)
+      .getSearchBasedProducts(ProductCategory.suit,null,null,priceTag)
       .subscribe((cResponse:SearchBasedProductResponse) => {
           this.products=cResponse.products;
           this.searchTerm = cResponse.searchTitle;

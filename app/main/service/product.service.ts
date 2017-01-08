@@ -6,6 +6,7 @@ import {IAppConfig, APP_CONFIG} from "../app.config";
 import {ProductResponse} from "../response/product.response";
 import {Observable} from "rxjs/Observable";
 import {ProductMaterialResponse} from "../response/product-material.response";
+import {ProductColorResponse} from "../response/product-color.response";
 
 @Injectable()
 export class ProductService{
@@ -44,6 +45,25 @@ export class ProductService{
     parameters.set('product_type',type);
     return this.http.get(this.config.apiEndpoint + "material.php" , {search:parameters})
       .map((response : Response)=><ProductMaterialResponse>response.json().data)
+      .catch(this.handleNewError);
+  }
+
+  getProductColor(type:number):Observable<ProductColorResponse[]>{
+    let parameters = new URLSearchParams();
+    parameters.set('product_type',type);
+    return this.http.get(this.config.apiEndpoint + "color.php" , {search:parameters})
+      .map((response : Response)=><ProductColorResponse>response.json().data)
+      .catch(this.handleNewError);
+  }
+
+  getSearchBasedProducts(category:string,material:number=null,color:number=null,price:string=null):Promise<SearchBasedProductResponse>{
+    let parameters = new URLSearchParams();
+    parameters.set('category',category);
+    parameters.set('material',material);
+    parameters.set('color',color);
+    parameters.set('price',price);
+    return this.http.get(this.config.apiEndpoint + "search-based-products.php" , {search:parameters})
+      .map((response : Response)=><SearchBasedProductResponse>response.json().data)
       .catch(this.handleNewError);
   }
 
