@@ -1,4 +1,17 @@
 # Getting Started
+A Project on AnjularJs V2.0.This has the following pages/functionality
+
+Multiple Product Pages
+
+Contact Page with Dynamic Form
+
+About Us Page
+
+Slider on Home Page
+
+Tabs on Home page
+
+Meta Data Integration (SEO tags)
 
 Super simple Angular 2 app with 1 module and 2 routes 
 
