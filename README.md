@@ -13,6 +13,8 @@ Tabs on Home page
 
 Meta Data Integration (SEO tags)
 
+Sorting products
+
 Super simple Angular 2 app with 1 module and 2 routes 
 
 ## Get the Code
