@@ -1,6 +1,6 @@
 import {Component, OnInit} from "@angular/core";
-import {HomeService} from "../home.service";
 import {TopArrival} from "./top-arrival";
+import {HomeService} from "../../../service/home.service";
 
 @Component({
   moduleId: module.id,

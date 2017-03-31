@@ -182,7 +182,7 @@ a:hover {
 .boxes a.btn {
 	padding: 4px 16px 4px ;
 }
-a.btn {
+.mybtn,                                                                                                                                                                                                                                                                                                                           a.btn {
 	color: #000;
 	display: inline-block;
 	background-color: #fbf6f8;

@@ -37,7 +37,7 @@ padding-top: 3px;
 	float:left;
 	font: 13px/18px  Arial, Helvetica, sans-serif;
 	margin: 0;
-	
+
 }
 #form label {
 	position:relative;
@@ -53,7 +53,7 @@ padding-top: 3px;
 
 #form .error, #form .empty {
 	color: #FF0000;
-	display: none;
+	display: block;
 	font-size: 11px;
 	line-height:14px;
 	width:auto;
@@ -65,10 +65,10 @@ padding-top: 3px;
 }
 
 
-#form .error-empty {
+/*#form .error-empty {
 	display:none;
 	float:left;
-}
+}*/
 
 .btns {
 	position:relative;
@@ -78,14 +78,14 @@ padding-top: 3px;
 }
 
 
-.btns a.btn {
+.btns .btn {
 	margin: 0 !important;
 	padding-left: 20px;
 	padding-right: 20px;
 	cursor: pointer;
 }
 
-.btns a.btn {
+.btns .btn {
 	margin-left: 18px !important;
 }
 
@@ -126,5 +126,5 @@ padding-top: 3px;
 
 
 .success_wrapper {
-	position: relative;	
+	position: relative;
 }

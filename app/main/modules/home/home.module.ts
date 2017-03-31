@@ -1,6 +1,6 @@
 import {NgModule} from "@angular/core";
 import {BrowserModule} from "@angular/platform-browser";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpModule} from "@angular/http";
 
 import {Ng2TabModule} from "ng2-tab";
@@ -24,6 +24,7 @@ import '../rxjs-extensions';
     ProductModule,
     HomeRoutingModule,
     Ng2TabModule,
+    ReactiveFormsModule
   ],
   declarations: [
     AppComponent,
