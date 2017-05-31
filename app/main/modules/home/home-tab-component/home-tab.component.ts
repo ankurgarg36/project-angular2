@@ -1,5 +1,4 @@
 import {Component, OnInit} from "@angular/core";
-import {TopArrival} from "./top-arrival";
 import {ProductResponse} from "../../../response/product.response";
 import {ProductService} from "../../../service/product.service";
 
@@ -12,9 +11,9 @@ import {ProductService} from "../../../service/product.service";
 
 export class HomeTabComponent implements OnInit{
 
-  public pSaree : ProductResponse = [];
-  public pSuit  : ProductResponse = [];
-  public pLengha : ProductResponse = [];
+  public pSaree : ProductResponse ;
+  public pSuit  : ProductResponse;
+  public pLengha : ProductResponse ;
 
   constructor(private _productService : ProductService){}
 

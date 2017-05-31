@@ -2,6 +2,6 @@
 <project version="4">
   <component name="TypeScriptCompiler">
     <option name="isCompilerEnabled" value="true" />
-    <option name="useConfig" value="true" />
+    <option name="scopeName" value="Module 'project-angular2'" />
   </component>
 </project>
